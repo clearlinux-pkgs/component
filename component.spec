@@ -4,7 +4,7 @@
 #
 Name     : component
 Version  : 0.0.1
-Release  : 1
+Release  : 2
 URL      : https://pypi.python.org/packages/78/7e/72ca4a06c7f768c0be6591802699704d4021caa71b05ade05873d4d50ed4/component-0.0.1.zip
 Source0  : https://pypi.python.org/packages/78/7e/72ca4a06c7f768c0be6591802699704d4021caa71b05ade05873d4d50ed4/component-0.0.1.zip
 Summary  : A python library that makes is easy to consume bower components with python.
@@ -33,12 +33,12 @@ python components for the component package.
 
 %build
 export LANG=C
-export SOURCE_DATE_EPOCH=1485890093
+export SOURCE_DATE_EPOCH=1485890466
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
 %install
-export SOURCE_DATE_EPOCH=1485890093
+export SOURCE_DATE_EPOCH=1485890466
 rm -rf %{buildroot}
 python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
 python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
