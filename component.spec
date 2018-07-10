@@ -4,16 +4,16 @@
 #
 Name     : component
 Version  : 0.0.1
-Release  : 10
+Release  : 11
 URL      : http://pypi.debian.net/component/component-0.0.1.zip
 Source0  : http://pypi.debian.net/component/component-0.0.1.zip
 Summary  : A python library that makes is easy to consume bower components with python.
 Group    : Development/Tools
 License  : MIT
+Requires: component-python3
 Requires: component-python
 BuildRequires : pbr
 BuildRequires : pip
-
 BuildRequires : python3-dev
 BuildRequires : setuptools
 
@@ -23,9 +23,19 @@ No detailed description available
 %package python
 Summary: python components for the component package.
 Group: Default
+Requires: component-python3
 
 %description python
 python components for the component package.
+
+
+%package python3
+Summary: python3 components for the component package.
+Group: Default
+Requires: python3-core
+
+%description python3
+python3 components for the component package.
 
 
 %prep
@@ -36,15 +46,12 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1503074174
-python2 setup.py build -b py2
+export SOURCE_DATE_EPOCH=1531203151
 python3 setup.py build -b py3
 
 %install
-export SOURCE_DATE_EPOCH=1503074174
 rm -rf %{buildroot}
-python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
-python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
+python3 -tt setup.py build -b py3 install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
 echo ----[ mark ]----
@@ -54,5 +61,7 @@ echo ----[ mark ]----
 
 %files python
 %defattr(-,root,root,-)
-/usr/lib/python2*/*
+
+%files python3
+%defattr(-,root,root,-)
 /usr/lib/python3*/*
