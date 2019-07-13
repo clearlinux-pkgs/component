@@ -4,7 +4,7 @@
 #
 Name     : component
 Version  : 0.0.1
-Release  : 13
+Release  : 14
 URL      : http://pypi.debian.net/component/component-0.0.1.zip
 Source0  : http://pypi.debian.net/component/component-0.0.1.zip
 Summary  : A python library that makes is easy to consume bower components with python.
