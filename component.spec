@@ -4,7 +4,7 @@
 #
 Name     : component
 Version  : 0.0.1
-Release  : 18
+Release  : 19
 URL      : http://pypi.debian.net/component/component-0.0.1.zip
 Source0  : http://pypi.debian.net/component/component-0.0.1.zip
 Summary  : A python library that makes is easy to consume bower components with python.
@@ -15,7 +15,7 @@ Requires: component-python3 = %{version}-%{release}
 BuildRequires : buildreq-distutils3
 
 %description
-UNKNOWN
+No detailed description available
 
 %package python
 Summary: python components for the component package.
@@ -45,12 +45,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1582912177
-# -Werror is for werrorists
+export SOURCE_DATE_EPOCH=1603388606
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
-export FCFLAGS="$CFLAGS -fno-lto "
-export FFLAGS="$CFLAGS -fno-lto "
+export FCFLAGS="$FFLAGS -fno-lto "
+export FFLAGS="$FFLAGS -fno-lto "
 export CXXFLAGS="$CXXFLAGS -fno-lto "
 export MAKEFLAGS=%{?_smp_mflags}
 python3 setup.py build
